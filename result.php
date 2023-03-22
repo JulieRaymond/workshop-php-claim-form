@@ -1,5 +1,27 @@
 <?php
+var_dump($_POST);
 $errors = [];
+if(isset($_POST['companyName']) && $_POST['companyName']== "") {
+    $errors['companyName'] = "Company Name is required";
+}
+
+if(isset($_POST['name']) && $_POST['name']== "") {
+    $errors['name'] = "Name is required";
+}
+
+if(isset($_POST['commercial']) && $_POST['commercial']== "") {
+    $errors['commercial'] = "Contact commercial is required";
+}
+
+if(isset($_POST['mail']) && $_POST['mail']== "" && filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)==false) {
+    $errors['mail'] = "Mail is required";
+}
+
+if(isset($_POST['contactMessage']) && $_POST['contactMessage']== "" || strlen($_POST['contactMessage'])<30 ) {
+    $errors['contactMessage'] = "Message is required";
+}
+
+var_dump($errors);
 
 // TODO 3 - Get the data from the form and check for errors
 
@@ -39,15 +61,11 @@ if (!empty($errors)) {
 
             <!-- TODO 2 - Replace those placeholders by the values sent from the form -->
             <ul>
-                <li>Votre entreprise : <span>Dunder Mifflin</span></li>
-                <li>Votre nom : <span>Mickael Scott</span></li>
-                <li>Votre email : <span>mickael.scott@dundermifflin.com</span></li>
+                <li>Votre entreprise : <span><?php echo htmlentities($_POST['companyName']); ?></span></li>
+                <li>Votre nom : <span><?php echo htmlentities($_POST['name']); ?></span></li>
+                <li>Votre email : <span><?php echo htmlentities($_POST['mail']); ?></span></li>
                 <li>Votre message :
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Provident facere, tempora possimus aspernatur excepturi
-                        incidunt dolores illo dicta similique harum mollitia enim
-                        voluptates delectus? Repellendus inventore molestiae a
-                        accusamus deleniti?
+                    <p><?php echo htmlentities($_POST['contactMessage']); ?>
                     </p>
                 </li>
             </ul>
