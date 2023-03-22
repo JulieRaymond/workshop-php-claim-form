@@ -71,8 +71,7 @@ main form div {
 }
 
 main form input,
-main form textarea,
-main form select {
+main form textarea {
   padding: 4px;
   width: 50%;
   border-radius: 4px;
