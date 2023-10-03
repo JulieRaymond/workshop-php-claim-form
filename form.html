@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulaire de réclamation</title>
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <h1>Formulaire de réclamation</h1>
-        <img src="images/logo_dunder.png" alt="Logo Dunder Mifflin">
+      <h1>Formulaire de réclamation</h1>
+      <img src="images/logo_dunder.png" alt="Logo Dunder Mifflin" />
     </header>
 
     <main>
-        <p>Pour toute plainte concernant votre commande de papier, veuillez s'il vous plait remplir le formulaire
-            suivant.</p>
+      <p>
+        Pour toute plainte concernant votre commande de papier, veuillez s'il
+        vous plait remplir le formulaire suivant.
+      </p>
 
-        <form action="" method="post">
-            <div>
-                <label for="companyName">Nom de votre entreprise : </label>
-                <input type="text" id="companyName" name="companyName" required="true">
-            </div>
+      <form action="result.php" method="post">
+        <div>
+          <label for="companyName">Nom de votre entreprise : </label>
+          <input
+            type="text"
+            id="companyName"
+            name="companyName"
+            required="true"
+          />
+        </div>
 
-            <!--TODO 1 - Add the missing fields-->
+        <!--TODO 1 - Add the missing fields-->
+        <div>
+          <label for="userName">Votre nom : </label>
+          <input type="text" id="userName" name="userName" required="true" />
+        </div>
+        <div>
+          <label for="userEmail">Votre email : </label>
+          <input type="email" id="userEmail" name="userEmail" required="true" />
+        </div>
 
-            <div>
-                <label for="contactMessage">Votre message : </label>
-                <textarea name="contactMessage" id="contactMessage" rows="10"></textarea>
-            </div>
+        <div>
+          <label for="contactMessage">Votre message : </label>
+          <textarea
+            name="contactMessage"
+            id="contactMessage"
+            rows="10"
+            required="true"
+          ></textarea>
+        </div>
 
-            <div class="buttonsLine">
-                <button type="submit">Envoyer <img src="images/mail.png"></button>
-            </div>
-        </form>
+        <div class="buttonsLine">
+          <button type="submit">Envoyer <img src="images/mail.png" /></button>
+        </div>
+      </form>
     </main>
-
-</body>
-
+  </body>
 </html>
